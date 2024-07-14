@@ -1,0 +1,47 @@
+.header_w {
+    background-color: #313131;
+   
+    height: 10vh;
+    border-bottom: 1px solid white  ;
+    .header_grid_w {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      .header_left_w{
+        img{
+            width: 200px;
+        }
+      }
+      .header_right_w {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        a {
+          &:first-child {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            p {
+            }
+            img {
+              animation: blink 1.5s infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

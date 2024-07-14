@@ -1,0 +1,40 @@
+.logos_slider__wrap {
+    width: 100%;
+    padding: 15px;
+    background-color: #242424;
+  
+    .ppd{
+        padding: 10px;
+        width: 100%;
+        .logos_w {
+            padding: 10px;
+            height: 80px;
+            background-color: #333333;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        
+            img {
+              width: 100%;
+            }
+          }
+    }
+   
+  
+    :global{
+        .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        
+          .slick-list {
+            margin: 0 -5px; // Adjusted margin to compensate for the slide margins
+          }
+    }
+  }
+  
+  .slider_w {
+    overflow: hidden;
+  }
+  

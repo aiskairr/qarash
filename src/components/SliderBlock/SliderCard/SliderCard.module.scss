@@ -1,0 +1,30 @@
+.card_w{
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    height: 360px;
+    padding: 30px;
+    .left_w{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .title{
+            font-weight: 700;
+            font-size: 40px;
+            color: white;
+        }
+        button{
+            border-radius: 25px;
+            background-color: black;
+            padding: 10px 30px;
+            color: white;
+            width: fit-content;
+        }
+    }
+    .right_w{
+        img{
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+import { useEffect, useRef } from "react";
+import scss from "./SocBlock.module.scss";
+
+function SocBlock() {
+  const marqueeRef = useRef(null);
+  const marqueeContentRef = useRef(null);
+
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+    const marqueeContent = marqueeContentRef.current;
+    let startPos = 0;
+    const speed = 4; // Speed of the scrolling
+
+    const scrollMarquee = () => {
+      startPos -= speed;
+      if (startPos <= -marqueeContent.scrollWidth) {
+        startPos = 0;
+      }
+      marqueeContent.style.transform = `translateX(${startPos}px)`;
+      requestAnimationFrame(scrollMarquee);
+    };
+
+    scrollMarquee();
+  }, []);
+
+  return (
+    <div className={scss.soc_wrapper}>
+      <div className={scss.soc_top__w}>
+        <img src="/images/topis.svg" alt="topis" />
+        <div className={scss.marquee} ref={marqueeRef}>
+          <div className={scss.marqueeContent} ref={marqueeContentRef}>
+            <p className={scss.marqueeText}>
+              Исходя из реалий и требований современной киноиндустрии, где при
+              создании и продвижении кинопроектов
+            </p>
+            <p className={scss.marqueeText}>
+              Исходя из реалий и требований современной киноиндустрии, где при
+              создании и продвижении кинопроектов
+            </p>
+          </div>
+        </div>
+        <img src="/images/botis.svg" alt="botis" />
+      </div>
+      <div className={scss.soc_bot__w + " container"}>
+        <div>
+          <p>27-30 октября 2024</p>
+          <p className={scss.w_thr}>В фокусе</p>
+          <p>
+            Исходя из реалий и требований современной киноиндустрии, где при
+            создании и продвижении кинопроектов создатели все чаще сталкиваются
+            с вызовами современного глобального бизнеса, сеть кинотеатров
+            СИНЕМАТИКА создала площадку QARASH LAB, на которой соберутся
+            кинематографисты с Франции, Кореи, России, Казахстана и Кыргызстана
+            для того, чтобы коммуницировать, делиться опытом и созидать.
+          </p>
+          <div className={scss.imgg}>
+            <img src="/images/eyes.png" alt="" />
+          </div>
+        </div>
+        <div className={scss.r_block}>
+          <div>
+            {" "}
+            <p>
+              Объединить в единое целое целое КИНО И БИЗНЕС: повысить знания в
+              кинобизнесе, кинопроизводстве и продвижении кинопроектов{" "}
+            </p>
+          </div>
+          <div>
+            {" "}
+            <p>Поддержать и продвигать творчество молодых кинематографистов </p>
+          </div>
+          <div>
+            {" "}
+            <p>
+              Обратить внимание на важность и необходимость всех профессий,
+              которые участвуют в кинопроизводстве{" "}
+            </p>
+          </div>
+          <div>
+            {" "}
+            <p>
+              Дать возможность проработать творческие проекты с передовыми
+              профессионалами современной киноиндустрии стран-участниц{" "}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={scss.blocks}>
+      <div className={scss.clip}>
+        <img src="/images/horses.svg" alt="" />
+      </div>
+      <div className={scss.clip2}></div>
+
+      </div>
+    </div>
+  );
+}
+
+export default SocBlock;

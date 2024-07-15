@@ -1,0 +1,139 @@
+.soc_wrapper {
+  background-color: #f35503;
+  .soc_top__w {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    img {
+      width: 100%;
+    }
+
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .marqueeContent {
+      display: flex;
+      white-space: nowrap;
+    }
+
+    .marqueeText {
+      font-weight: 900;
+      font-size: 64px;
+      color: white;
+      padding-right: 100px; /* Space between the two text items */
+    }
+  }
+
+  .soc_bot__w {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    margin-top: 40px;
+    grid-template-rows: 1fr;
+    padding: 100px 0;
+    > div {
+      &:first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+
+        p {
+          font-size: 24px;
+          font-weight: 500;
+          color: #242424;
+        }
+
+        .w_thr {
+          font-weight: 700;
+          font-size: 64px;
+          color: white;
+        }
+
+        .imgg {
+          width: 100%;
+          border: 3px solid black;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      &:last-child {
+        > div {
+          padding: 20px;
+          border: 0;
+          border-top: 1px solid white;
+          border-bottom: 1px solid white;
+          position: relative;
+
+          &:not(:last-child) {
+            &::after {
+              content: "";
+              position: absolute;
+              background-color: white;
+              left: -21px;
+              top: 30px;
+              width: 1px;
+              height: calc(
+                100% + 10px
+              ); // Уменьшите на высоту блока (в этом примере 30px сверху и снизу)
+            }
+          }
+
+          p {
+            font-size: 24px;
+            color: white;
+            font-weight: 500;
+            position: relative;
+            padding-left: 40px;
+
+            &::before {
+              content: url("../../../public/images/circleW.svg");
+              position: absolute;
+              left: -50px;
+              top: 0;
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.blocks{
+    position: relative;
+}
+.clip {
+    width: 100%;
+    clip-path: ellipse(51% 65% at 50% 0%);
+    height: 100px;
+    background-color: #f35503;
+    position: absolute; /* Позиционирование для наложения на границу контейнера */
+    top: 0; /* Убедитесь, что элемент располагается внутри контейнера */
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    img{
+        width: 200px;
+    }
+  }
+  .clip2 {
+    width: 100%;
+    clip-path: ellipse(54% 85% at 50% 0%);
+    height: 100px;
+    background-color: #13171A;
+    position: absolute; /* Позиционирование для наложения на границу контейнера */
+    top: 0; /* Убедитесь, что элемент располагается внутри контейнера */
+    left: 0;
+  }
+
+ 

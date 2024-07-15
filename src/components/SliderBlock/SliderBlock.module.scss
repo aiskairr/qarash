@@ -1,0 +1,58 @@
+.s_back{
+    background-image: url("../../../public/images/slider_back.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.slider_ww{
+    padding: 150px 0 80px 0;
+    :global{
+        .slick-slide{
+            >div{
+                padding: 20px;
+            }
+        }
+        .slick-dots li.slick-active button:before{
+            color: #FB610A ;
+            opacity: 1;
+        }
+        .slick-dots li button:before{
+            font-size: 15px;
+        }
+      }
+}
+.blocks{
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    img{
+        width: 200px;
+        position: relative;
+        top: -20px;
+z-index: 3;
+transform: rotate(-180deg);
+    }
+}
+.clip {
+    width: 100%;
+    clip-path: ellipse(51% 90% at 50% 109%);
+    height: 100px;
+    background-color: #f35503;
+    position: absolute; /* Позиционирование для наложения на границу контейнера */
+    top: 0; /* Убедитесь, что элемент располагается внутри контейнера */
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .clip2 {
+    width: 100%;
+    clip-path: ellipse(53% 100% at 50% 102%);
+    height: 100px;
+    background-color: #13171A;
+    position: absolute; /* Позиционирование для наложения на границу контейнера */
+    top: 0; /* Убедитесь, что элемент располагается внутри контейнера */
+    left: 0;
+  }

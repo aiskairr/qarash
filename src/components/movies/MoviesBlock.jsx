@@ -11,13 +11,13 @@ let cards = [
 
 const settings = {
     dots: false,
-    // infinite: false,
+    infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    // autoplay: false,
-    // speed: 1000,
-    // autoplaySpeed: 1000,
-    // cssEase: "linear",
+    autoplay: true,
+    speed: 10000,
+    autoplaySpeed: 1000,
+    cssEase: "linear",
     className: styles.slider_w
   };
 

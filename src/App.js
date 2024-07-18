@@ -4,6 +4,7 @@ import LogosSlider from './components/logosSlider/logosSlider';
 import MainBlock from './components/mainblock/MainBlock';
 import SliderBlock from './components/SliderBlock/SliderBlock';
 import SocBlock from './components/SocBlock/SocBlock';
+import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <LogosSlider />
       <SocBlock />
       <SliderBlock />
+      <VideoPlayer />
     </div>
   );
 }

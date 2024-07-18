@@ -1,16 +1,49 @@
-import Slider from 'react-slick'
+import React from 'react';
+import Slider from 'react-slick';
 import SliderCard from './SliderCard/SliderCard';
-import scss from "./SliderBlock.module.scss"
+import scss from "./SliderBlock.module.scss";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+// Custom Next Arrow
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} ${scss.customNextArrow}`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
+      <img src="/images/rightarrow.svg" alt="Next" />
+    </div>
+  );
+}
+
+// Custom Previous Arrow
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} ${scss.customPrevArrow}`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
+      <img src="/images/leftarrow.svg" alt="Previous" />
+    </div>
+  );
+}
 
 const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
-    slidesToScroll: 1
-  };
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
+};
 
-  const cards = [
+const cards = [
     {
         desc: "Условия актерского конкурса",
         background: "#F35503",
@@ -23,7 +56,7 @@ const settings = {
         img: "/images/s2.png",
         colorT: "#242424"
     },
-  ]
+];
 
 function SliderBlock() {
   return (
@@ -47,4 +80,4 @@ function SliderBlock() {
   )
 }
 
-export default SliderBlock
+export default SliderBlock;

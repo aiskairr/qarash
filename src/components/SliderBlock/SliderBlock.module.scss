@@ -19,6 +19,14 @@
         .slick-dots li button:before{
             font-size: 15px;
         }
+        .slick-arrow{
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
+        .slick-arrow::before{
+            content: "";
+        }
       }
 }
 .blocks{
@@ -56,3 +64,19 @@ transform: rotate(-180deg);
     top: 0; /* Убедитесь, что элемент располагается внутри контейнера */
     left: 0;
   }
+  .customNextArrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .customPrevArrow {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  

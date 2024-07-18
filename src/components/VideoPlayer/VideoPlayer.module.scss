@@ -1,0 +1,159 @@
+.wrapper {
+    background: #F35503;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.videoFrame {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border: 10px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.reactPlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.reactPlayer iframe,
+.reactPlayer video {
+    border-radius: 15px !important;
+    /* Задайте нужный радиус к iframe или видео элементам */
+}
+
+.playerButton {
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    bottom: -40px;
+    left: 44.5%;
+    background: black;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 8px solid #F35503;
+
+    img {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.sideText {
+    width: 5%;
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    left: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.sideTextRight {
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    right: -70px;
+    bottom: 50%;
+    transform: translateY(-50%);
+    rotate: 180deg;
+    width: 5%;
+    color: #000;
+}
+
+.textOverlayTop {
+    height: 43px;
+    transform: rotate(90deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 10px;
+
+    img {
+        width: 70%;
+    }
+}
+
+.textOverlay {
+    height: 43px;
+    transform: rotate(90deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+
+    img {
+        width: 70%;
+    }
+}
+
+.logos_slider__wrap {
+    width: 100%;
+    margin-top: 80px;
+
+    .ppd {
+        width: 100%;
+
+        .logos_w {
+            padding: 10px;
+            width: 140px;
+            height: 60px;
+            background-color: #333333;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+
+    :global {
+        .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slick-list {
+            margin: 0 -5px; // Adjusted margin to compensate for the slide margins
+        }
+    }
+}
+
+.slider_w {
+    overflow: hidden;
+}

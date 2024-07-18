@@ -7,6 +7,7 @@ import MainBlock from './components/mainblock/MainBlock';
 import Programms from './components/Programms/Programms';
 import SliderBlock from './components/SliderBlock/SliderBlock';
 import SocBlock from './components/SocBlock/SocBlock';
+import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <LogosSlider />
       <SocBlock />
       <SliderBlock />
+      <VideoPlayer />
       <Programms />
       <FormBlock />
       <Footer />

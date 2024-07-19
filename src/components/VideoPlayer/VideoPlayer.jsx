@@ -12,7 +12,30 @@ const settings = {
     speed: 1000,
     autoplaySpeed: 1000,
     cssEase: "linear",
-    className: styles.slider_w
+    className: styles.slider_w,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        }
+    ]
 };
 
 const VideoPlayer = () => {
@@ -22,19 +45,38 @@ const VideoPlayer = () => {
         setIsPlaying(!isPlaying);
     };
 
-    const data = [
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-        { img: "/images/qarashSliderText.svg",  img2: "/images/qarashTextFull.svg"},
-    ]
+    const logos = [
+        {
+            img: "/images/log1.svg",
+        },
+        {
+            img: "/images/log1.svg",
+        },
+        {
+            img: "/images/log1.svg",
+        },
+        {
+            img: "/images/log1.svg",
+        },
+        {
+            img: "/images/log1.svg",
+        },
+        {
+            img: "/images/log1.svg",
+        },
+        {
+            img: "/images/log1.svg",
+        },
+        {
+            img: "/images/log1.svg",
+        },
+        {
+            img: "/images/log1.svg",
+        },
+        {
+            img: "/images/log1.svg",
+        },
+    ];
 
     return (
         <>
@@ -66,22 +108,20 @@ const VideoPlayer = () => {
                     <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
                     <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
                 </div>
-                <div className={styles.logos_slider__wrap}>
-                <Slider {...settings}>
-                    {data.map((el) => {
-                        return (
-                            <div className={styles.ppd}>
-                                <div className={styles.logos_w}>
-                                    <img src={el.img} alt="logos" />
-                                    <img src={el.img2} alt="logos" />
+                <div style={{ width: '100%' }}>
+                    <div className={styles.logos_slider__wrap}>
+                        <Slider {...settings}>
+                            {logos.map((el, index) => (
+                                <div className={styles.ppd} key={index}>
+                                    <div className={styles.logos_w}>
+                                        <img src={el.img} alt="logos" />
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })}
-                </Slider>
+                            ))}
+                        </Slider>
+                    </div>
+                </div>
             </div>
-            </div>
-           
         </>
     );
 }

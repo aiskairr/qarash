@@ -63,3 +63,13 @@ button{
   object-fit: cover;
   flex: 1;
 }
+
+.slick-slider{
+  .slick-prev, .slick-next {
+      display: none !important;
+  }
+  
+  .slick-dots {
+      display: none !important;
+  }
+}

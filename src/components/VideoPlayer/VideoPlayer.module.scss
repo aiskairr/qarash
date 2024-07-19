@@ -3,11 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-bottom: 0;
+    overflow: hidden;
 }
 
 .container {
@@ -118,7 +117,7 @@
     }
 
     @media (max-width: 768px) {
-        width: 7%;
+        width: 10%;
     }
 
     img {
@@ -126,6 +125,10 @@
 
         @media (max-width: 1200px) {
             width: 50%;
+        }
+
+        @media (max-width: 425px) {
+            width: 100%;
         }
     }
 }
@@ -138,14 +141,14 @@
     align-items: center;
     justify-content: center;
     gap: 25px;
-    margin-top: 15px;
+    margin-bottom: 10px;
 
     @media (max-width: 1200px) {
         width: 5%;
     }
 
     @media (max-width: 768px) {
-        width: 7%;
+        width: 10%;
     }
 
     img {
@@ -154,46 +157,36 @@
         @media (max-width: 1200px) {
             width: 50%;
         }
+
+        @media (max-width: 425px) {
+            width: 100%;
+        }
     }
 }
 
 .logos_slider__wrap {
     width: 100%;
-    margin-top: 80px;
+    margin-top: 70px;
+    background-color: #333333;
 
-    .ppd {
-        width: 100%;
-
-        .logos_w {
-            padding: 10px;
-            width: 140px;
-            height: 60px;
-            background-color: #333333;
-            display: flex !important;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-
-            img {
-                width: 100%;
-            }
-        }
+    .slick-prev,
+    .slick-next {
+        display: none !important;
     }
 
+    .slick-dots {
+        display: none !important;
+    }
 
-    :global {
-        .slick-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    .slick-slider {
+
+        .slick-prev,
+        .slick-next {
+            display: none !important;
         }
 
-        .slick-list {
-            margin: 0 -5px; // Adjusted margin to compensate for the slide margins
+        .slick-dots {
+            display: none !important;
         }
     }
-}
-
-.slider_w {
-    overflow: hidden;
 }

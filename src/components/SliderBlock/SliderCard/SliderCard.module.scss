@@ -5,6 +5,11 @@
     gap: 10px;
     height: 300px;
     padding: 30px;
+    @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    height: fit-content;
+        
+    }
     .left_w{
         display: flex;
         flex-direction: column;
@@ -20,11 +25,34 @@
             padding: 10px 30px;
             color: white;
             width: fit-content;
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
         }
     }
     .right_w{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
         img{
             width: 100%;
+            @media screen and (max-width: 600px) {
+                width: 200px;
+
+                }
+        }
+        button{
+            border-radius: 25px;
+            background-color: black;
+            padding: 10px 30px;
+            color: white;
+            width: 100%;
+            display: none;
+            @media screen and (max-width: 600px) {
+            display: block;
+                
+            }
         }
     }
 }

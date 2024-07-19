@@ -15,6 +15,9 @@ function Header() {
           <a href="">Программа</a>
           <a href="">Контакты</a>
         </div>
+        <button className={scss.img_burger}>
+          <img src="/images/burgermenu.svg" alt="burgermenu" />
+        </button>
       </div>
     </div>
   );

@@ -11,12 +11,19 @@
       .header_left_w{
         img{
             width: 200px;
+            @media (max-width: 350px) {
+            width: 150px;
+
+            }
         }
       }
       .header_right_w {
         display: flex;
         align-items: center;
         gap: 40px;
+        @media (max-width: 765px) {
+          display: none;
+        }
         a {
           &:first-child {
             display: flex;
@@ -28,6 +35,12 @@
               animation: blink 1.5s infinite;
             }
           }
+        }
+      }
+      .img_burger{
+        display: none;
+        @media (max-width: 765px) {
+          display: block;
         }
       }
     }

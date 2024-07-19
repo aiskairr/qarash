@@ -22,6 +22,12 @@ button{
   display: flex;
   margin: auto;
 }
+@media screen and (max-width: 600px) {
+  .uploader {
+    width: 100%;
+    height: 300px;
+  }
+}
 
 .uploader p {
   margin: auto;

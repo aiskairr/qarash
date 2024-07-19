@@ -10,7 +10,30 @@ const settings = {
     speed: 1000,
     autoplaySpeed: 1000,
     cssEase: "linear",
-    className: scss.slider_w
+    className: scss.slider_w,
+    responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 5,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          }
+        }
+      ]
   };
   const logos = [
     {
@@ -133,9 +156,15 @@ function FormBlock() {
         </div>
         <img src="/images/horss_b.svg" className={scss.hors} alt="" />
       </form>
+      <div className={scss.nonImg_w}>
+      <img className={scss.nonImg} src="/images/form_img.svg" alt="" />
+
+      </div>
+
       <div className={scss.lineb}>
         <img src="/images/line_b.png" alt="" />
       </div>
+
       <div className={scss.logos_slider__wrap}>
         <Slider {...settings}>
           {logos.map((el) => {

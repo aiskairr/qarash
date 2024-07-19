@@ -32,7 +32,15 @@
             grid-template-columns: 1fr 1fr 1fr;
             margin-top: 60px;
             margin-bottom: 80px;
-
+            @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 350px;
+                
+            }
+            @media screen and (max-width: 600px) {
+            grid-template-columns: 1fr;
+                
+            }
             .program_card {
                 perspective: 1000px;
                 .card_inner {
@@ -107,13 +115,23 @@
             right: -70px;
             bottom: -500px;
             width: 38%;
+            
+            @media screen and (max-width: 600px) {
+                width: 100%;
+                    bottom: -330px;
+                    right: 0;
+                }
         }
         .carlab {
             position: absolute;
-            top: 80px;
+            top: 30px;
             right: 0;
-            width: 70%;
+            width: 100%;
             opacity: 0.2;
+            @media screen and (max-width: 600px) {
+                grid-template-columns: 1fr;
+                    
+                }
         }
     }
 }

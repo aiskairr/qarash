@@ -18,7 +18,41 @@ const settings = {
     speed: 10000,
     autoplaySpeed: 1000,
     cssEase: "linear",
-    className: styles.slider_w
+    className: styles.slider_w,
+    responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+  
+            slidesToShow: 1,
+            slidesToScroll: 1,
+    autoplay: false,
+    speed: 1000,
+
+
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+    speed: 1000,
+
+    autoplay: false,
+
+          }
+        }
+      ]
   };
 
 function MoviesBlock() {

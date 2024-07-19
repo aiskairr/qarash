@@ -1,66 +1,114 @@
-.main_w{
-    height: 90vh;
-    background-color: #313131;
-    background-image: url("../../../public/images/backMain.png");
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-    .cont{
-        height: 100%;
-        .horseBlock{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: flex-end;
-            height: 100%;
-            img{
-                width: 100%;
-            }
+.main_w {
+  height: 90vh;
+  background-color: #313131;
+  background-image: url("../../../public/images/backMain.png");
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  .cont {
+    height: 100%;
+    .horseBlock {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-end;
+      height: 100%;
+      position: relative;
+      @media (max-width: 700px) {
+        display: none;
+      }
+      >img {
+        width: 40%;
+        &:first-child {
+          position: absolute;
+          left: 0;
         }
-        .main_content{
-            position: absolute;
-            top: 0;
-            width: 100%;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            padding: 60px 0 0 0 ;
-            p{
-                width: 15%;
-                text-align: center;
-                color: white;
-                font-size: 22px;
-            }
-            .slider_block {
-                .blockss {
-                  width: 550px;
-                  height: 550px;
-                  background-color: #313131;
-                  border: 4px solid white;
-                  border-radius: 400px;
-                  position: absolute;
-                  bottom: -250px;
-                  display: flex;
-                  justify-content: center;
-                  animation: rotate 3s linear infinite;
-                  -webkit-box-shadow: 0px 0px 8px 5px rgba(255, 255, 255, 0.2);
--moz-box-shadow: 0px 0px 8px 5px rgba(255, 255, 255, 0.2);
-box-shadow: 0px 0px 8px 5px rgba(255, 255, 255, 0.2);
-                }
-              }
-              
-              @keyframes rotate {
-                0% {
-                  transform: translate(-50%) rotate(0deg);
-                }
-                100% {
-                  transform: translate(-50%) rotate(360deg);
-                }
-              }
-              
+        &:nth-child(2) {
+          position: absolute;
+          right: 0;
         }
+        @media (max-width: 700px) {
+          display: none;
+        }
+      }
+     
     }
+    
+    .main_content {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 60px 0 0 0;
+  z-index: 2;
+
+      > img {
+        @media (max-width: 700px) {
+          width: 90%;
+        }
+      }
+      p {
+        width: 15%;
+        text-align: center;
+        color: white;
+        font-size: 22px;
+        @media (max-width: 700px) {
+          width: 90%;
+          font-size: 16px;
+          margin-top: 15px;
+        }
+      }
+      .slider_block {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        .blockss {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+
+          > div {
+            width: 60%;
+            position: absolute;
+            bottom: 0;
+            height: 100%;
+            @media (max-width: 1100px) {
+              bottom: -80px;
+              width: 50%;
+            }
+            @media (max-width: 760px) {
+              width: 100%;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.mobileHorse {
+  display: none;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  z-index: 1;
+  @media (max-width: 700px) {
+    display: block;
+    width: 100%;
+    img{
+      width: 100%;
+      position: absolute;
+      bottom: -40%;
+    }
+  }
 }

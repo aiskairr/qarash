@@ -10,6 +10,7 @@ function SliderCard({desc, background, img,backgroundImage, colorT}) {
         </div>
         <div className={scss.right_w}>
             <img src={img} alt="s_image" />
+            <button>Подробнее</button>
         </div>
     </div>
   )

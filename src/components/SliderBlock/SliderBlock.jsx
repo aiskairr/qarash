@@ -40,7 +40,33 @@ const settings = {
     slidesToShow: 2,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
 };
 
 const cards = [
@@ -62,20 +88,17 @@ function SliderBlock() {
   return (
     <div className={scss.s_back}>
         <div className={scss.slider_ww + " container"}>
-        <Slider {...settings}>
-            {cards.map((el, index) => {
-                return <SliderCard key={index} {...el} />
-            })}
-        </Slider>
-    </div>
-    <div className={scss.blocks}>
-    <img src="/images/horses.svg" alt="" />
-
-      <div className={scss.clip}>
-      </div>
-      <div className={scss.clip2}></div>
-
-      </div>
+          <Slider {...settings}>
+            {cards.map((el, index) => (
+                <SliderCard key={index} {...el} />
+            ))}
+          </Slider>
+        </div>
+        <div className={scss.blocks}>
+          <img src="/images/horses.svg" alt="Horses" />
+          <div className={scss.clip}></div>
+          <div className={scss.clip2}></div>
+        </div>
     </div>
   )
 }

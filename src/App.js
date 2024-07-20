@@ -1,3 +1,4 @@
+import React, { useRef } from 'react';
 import './App.css';
 import 'animate.css';
 import Footer from './components/footer/Footer';
@@ -12,18 +13,36 @@ import SocBlock from './components/SocBlock/SocBlock';
 import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 
 function App() {
+  // Create refs for sections
+  const socBlockRef = useRef(null);
+  const programmsRef = useRef(null);
+  const footerRef = useRef(null);
+  const formRef = useRef(null);
+
   return (
     <div className="App">
-      <Header />
-      <MainBlock />
+      <Header
+        socBlockRef={socBlockRef}
+        programmsRef={programmsRef}
+        footerRef={footerRef}
+      />
+      <MainBlock formRef={formRef} />
       <LogosSlider />
-      <SocBlock />
+      <div ref={socBlockRef}>
+        <SocBlock />
+      </div>
       <SliderBlock />
       <VideoPlayer />
-      <Programms />
+      <div ref={programmsRef}>
+        <Programms />
+      </div>
       <MoviesBlock />
-      <FormBlock />
-      <Footer />
+      <div ref={formRef}>
+        <FormBlock />
+      </div>
+      <div ref={footerRef}>
+        <Footer />
+      </div>
     </div>
   );
 }

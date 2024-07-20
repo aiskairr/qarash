@@ -1,6 +1,6 @@
 import scss from "./MainBlock.module.scss";
 
-function MainBlock() {
+function MainBlock({formRef}) {
   return (
     <div className={scss.main_w}>
       <div className={`container ${scss.cont}`}>
@@ -16,7 +16,7 @@ function MainBlock() {
             в кинематографе</p>
           <div className={scss.slider_block}>
            
-            <div className={scss.blockss}>
+            <div className={scss.blockss} style={{cursor: "pointer"}} onClick={() => formRef.current.scrollIntoView({ behavior: 'smooth' })}>
               <div>
                 <img className="animate__animated animate__backInUp" src="/images/main_elips.svg" alt="" />
               </div>

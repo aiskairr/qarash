@@ -1,9 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import scss from "./SocBlock.module.scss";
+import "animate.css/animate.min.css";
 
 function SocBlock() {
   const marqueeRef = useRef(null);
   const marqueeContentRef = useRef(null);
+  const socWrapperRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
     const marquee = marqueeRef.current;
@@ -23,8 +26,33 @@ function SocBlock() {
     scrollMarquee();
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect(); // Stop observing after animation trigger
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the component is in view
+    );
+
+    if (socWrapperRef.current) {
+      observer.observe(socWrapperRef.current);
+    }
+
+    return () => {
+      if (socWrapperRef.current) {
+        observer.unobserve(socWrapperRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className={scss.soc_wrapper}>
+    <div
+      ref={socWrapperRef}
+      className={`${scss.soc_wrapper} `}
+    >
       <div className={scss.soc_top__w}>
         <img src="/images/topis.svg" alt="topis" />
         <div className={scss.marquee} ref={marqueeRef}>
@@ -42,7 +70,9 @@ function SocBlock() {
         <img src="/images/botis.svg" alt="botis" />
       </div>
       <div className={scss.soc_bot__w + " container"}>
-        <div>
+        <div className={`${
+        isInView ? "animate__animated animate__fadeInLeft" : ""
+      }`}>
           <p>27-30 октября 2024</p>
           <p className={scss.w_thr}>В фокусе</p>
           <p>
@@ -57,27 +87,25 @@ function SocBlock() {
             <img src="/images/eyes.png" alt="" />
           </div>
         </div>
-        <div className={scss.r_block}>
+        <div className={scss.r_block + ` ${
+        isInView ? "animate__animated animate__fadeInRight" : ""
+      }`}>
           <div>
-            {" "}
             <p>
               Объединить в единое целое целое КИНО И БИЗНЕС: повысить знания в
               кинобизнесе, кинопроизводстве и продвижении кинопроектов{" "}
             </p>
           </div>
           <div>
-            {" "}
             <p>Поддержать и продвигать творчество молодых кинематографистов </p>
           </div>
           <div>
-            {" "}
             <p>
               Обратить внимание на важность и необходимость всех профессий,
               которые участвуют в кинопроизводстве{" "}
             </p>
           </div>
           <div>
-            {" "}
             <p>
               Дать возможность проработать творческие проекты с передовыми
               профессионалами современной киноиндустрии стран-участниц{" "}
@@ -86,11 +114,10 @@ function SocBlock() {
         </div>
       </div>
       <div className={scss.blocks}>
-      <div className={scss.clip}>
-        <img src="/images/horses.svg" alt="" />
-      </div>
-      <div className={scss.clip2}></div>
-
+        <div className={scss.clip}>
+          <img src="/images/horses.svg" alt="" />
+        </div>
+        <div className={scss.clip2}></div>
       </div>
     </div>
   );

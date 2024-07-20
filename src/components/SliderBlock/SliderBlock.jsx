@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import SliderCard from './SliderCard/SliderCard';
 import scss from "./SliderBlock.module.scss";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import "animate.css/animate.min.css";
 
 // Custom Next Arrow
 const NextArrow = (props) => {
@@ -53,7 +54,6 @@ const settings = {
         breakpoint: 768,
         settings: {
           arrows: false,
-
           slidesToShow: 1,
           slidesToScroll: 1,
         }
@@ -85,20 +85,48 @@ const cards = [
 ];
 
 function SliderBlock() {
+  const sliderBlockRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect(); // Stop observing after animation trigger
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the component is in view
+    );
+
+    if (sliderBlockRef.current) {
+      observer.observe(sliderBlockRef.current);
+    }
+
+    return () => {
+      if (sliderBlockRef.current) {
+        observer.unobserve(sliderBlockRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className={scss.s_back}>
-        <div className={scss.slider_ww + " container"}>
-          <Slider {...settings}>
-            {cards.map((el, index) => (
-                <SliderCard key={index} {...el} />
-            ))}
-          </Slider>
-        </div>
-        <div className={scss.blocks}>
-          <img src="/images/horses.svg" alt="Horses" />
-          <div className={scss.clip}></div>
-          <div className={scss.clip2}></div>
-        </div>
+    <div
+      ref={sliderBlockRef}
+      className={`${scss.s_back} `}
+    >
+      <div className={scss.slider_ww + " container " + `${isInView ? "animate__animated animate__fadeInLeft" : ""}`}>
+        <Slider {...settings}>
+          {cards.map((el, index) => (
+            <SliderCard key={index} {...el} />
+          ))}
+        </Slider>
+      </div>
+      <div className={scss.blocks}>
+        <img src="/images/horses.svg" alt="Horses" />
+        <div className={scss.clip}></div>
+        <div className={scss.clip2}></div>
+      </div>
     </div>
   )
 }

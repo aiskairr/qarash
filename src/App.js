@@ -1,4 +1,5 @@
 import './App.css';
+import 'animate.css';
 import Footer from './components/footer/Footer';
 import FormBlock from './components/formBlock/FormBlock';
 import Header from './components/header/Header';

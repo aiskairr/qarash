@@ -1,10 +1,14 @@
 .soc_wrapper {
   background-color: #f35503;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
   .soc_top__w {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    overflow: hidden;
 
     img {
       width: 100%;
@@ -134,7 +138,7 @@
     position: absolute; /* Позиционирование для наложения на границу контейнера */
     top: 0; /* Убедитесь, что элемент располагается внутри контейнера */
     left: 0;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     justify-content: center;
     img{
@@ -149,6 +153,7 @@
     position: absolute; /* Позиционирование для наложения на границу контейнера */
     top: 0; /* Убедитесь, что элемент располагается внутри контейнера */
     left: 0;
+    z-index: 2;
   }
 
  

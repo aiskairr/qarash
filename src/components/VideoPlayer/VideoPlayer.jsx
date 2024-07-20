@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
 import styles from "./VideoPlayer.module.scss";
 import Slider from "react-slick";
+import "animate.css/animate.min.css";
 
 const settings = {
     dots: false,
@@ -40,89 +41,94 @@ const settings = {
 
 const VideoPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isInView, setIsInView] = useState(false);
+    const videoPlayerRef = useRef(null);
 
     const handlePlayButtonClick = () => {
         setIsPlaying(!isPlaying);
     };
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsInView(true);
+                    observer.disconnect(); // Stop observing after animation trigger
+                }
+            },
+            { threshold: 0.1 } // Trigger when 10% of the component is in view
+        );
+
+        if (videoPlayerRef.current) {
+            observer.observe(videoPlayerRef.current);
+        }
+
+        return () => {
+            if (videoPlayerRef.current) {
+                observer.unobserve(videoPlayerRef.current);
+            }
+        };
+    }, []);
+
     const logos = [
-        {
-            img: "/images/log1.svg",
-        },
-        {
-            img: "/images/log1.svg",
-        },
-        {
-            img: "/images/log1.svg",
-        },
-        {
-            img: "/images/log1.svg",
-        },
-        {
-            img: "/images/log1.svg",
-        },
-        {
-            img: "/images/log1.svg",
-        },
-        {
-            img: "/images/log1.svg",
-        },
-        {
-            img: "/images/log1.svg",
-        },
-        {
-            img: "/images/log1.svg",
-        },
-        {
-            img: "/images/log1.svg",
-        },
+        { img: "/images/log1.svg" },
+        { img: "/images/log1.svg" },
+        { img: "/images/log1.svg" },
+        { img: "/images/log1.svg" },
+        { img: "/images/log1.svg" },
+        { img: "/images/log1.svg" },
+        { img: "/images/log1.svg" },
+        { img: "/images/log1.svg" },
+        { img: "/images/log1.svg" },
+        { img: "/images/log1.svg" },
     ];
 
     return (
-        <>
-            <div className={styles.wrapper}>
-                <div className={styles.textOverlayTop}>
-                    <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
-                    <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
-                    <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
-                </div>
-                <div className={styles.container}>
-                    <img className={styles.sideTextRight} src='/images/qarashText.svg' alt='QARASH LAB Right' />
-                    <div className={styles.videoFrame}>
-                        <ReactPlayer
-                            url='https://www.youtube.com/watch?v=BxAkq9d6M-M'
-                            className={styles.reactPlayer}
-                            width='100%'
-                            height='100%'
-                            controls={true}
-                            playing={isPlaying}
-                        />
-                        <div className={styles.playerButton} onClick={handlePlayButtonClick}>
-                            <img src='/images/playIcon.svg' alt='play' />
-                        </div>
+        <div
+            ref={videoPlayerRef}
+            className={`${styles.wrapper}`}
+        >
+            <div className={styles.textOverlayTop}>
+                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
+                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
+                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
+            </div>
+            <div className={styles.container + `  ${isInView ? "animate__animated animate__fadeInUp" : ""}`}>
+                <img className={styles.sideTextRight} src='/images/qarashText.svg' alt='QARASH LAB Right' />
+                <div className={styles.videoFrame}>
+                    <ReactPlayer
+                        url='https://www.youtube.com/watch?v=BxAkq9d6M-M'
+                        className={styles.reactPlayer}
+                        width='100%'
+                        height='100%'
+                        controls={true}
+                        playing={isPlaying}
+                    />
+                    <div className={styles.playerButton} onClick={handlePlayButtonClick}>
+                        <img src='/images/playIcon.svg' alt='play' />
                     </div>
-                    <img className={styles.sideText} src='/images/qarashText.svg' alt='QARASH LAB Left' />
                 </div>
-                <div className={styles.textOverlay}>
-                    <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
-                    <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
-                    <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
-                </div>
-                <div style={{ width: '100%' }}>
-                    <div className={styles.logos_slider__wrap}>
-                        <Slider {...settings}>
-                            {logos.map((el, index) => (
-                                <div className={styles.ppd} key={index}>
-                                    <div className={styles.logos_w}>
-                                        <img src={el.img} alt="logos" />
-                                    </div>
+                <img className={styles.sideText} src='/images/qarashText.svg' alt='QARASH LAB Left' />
+            </div>
+            <div className={styles.textOverlay}>
+                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
+                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
+                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
+            </div>
+            <div style={{ width: '100%' }}>
+                <div className={styles.logos_slider__wrap}>
+                    <Slider {...settings}>
+                        {logos.map((el, index) => (
+                            <div className={styles.ppd} key={index}>
+                                <div className={styles.logos_w}>
+                                    <img src={el.img} alt="logos" />
                                 </div>
-                            ))}
-                        </Slider>
-                    </div>
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

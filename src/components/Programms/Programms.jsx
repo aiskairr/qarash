@@ -2,32 +2,61 @@ import React, { useEffect, useRef, useState } from 'react';
 import scss from './Programms.module.scss';
 import 'animate.css/animate.min.css';
 
-const cards = [
+const cards23 = [
   {
     date: "5 октября, Чт",
     desc: "Обзорная дискуссия на тему: «Кинофестиваль как инструмент социальной политики»"
   },
   {
     date: "27 октября, Пт",
-    desc: "Обзорная дискуссия на тему: «Кинофестиваль как инструмент социальной политики»"
+    desc: "Торжественная церемония открытия киномероприятия QARASH LAB Лаборатория Кино",
+    desc2: "Показ фильма Динары Асановой «Пацаны»"
   },
   {
     date: "28 октября, Сб",
-    desc: "Обзорная дискуссия на тему: «Кинофестиваль как инструмент социальной политики»"
+    desc: "Образовательный блок в АУЦА",
+    desc2: "Показ фильма Айсултана Сейитова «Каш»Образовательный блок АУЦА"
   },
   {
     date: "29 октября, Вс",
-    desc: "Обзорная дискуссия на тему: «Кинофестиваль как инструмент социальной политики»"
+    desc: "Образовательный блок в АУЦА",
+    desc2: "Показ фильма Дальмира Тилепберген «Белек»"
   },
   {
     date: "30 октября, Пн",
+    desc: "Заключительный концерт в Кыргызской Национальной Филармонии им. Т.Сатылганова"
+  },
+];
+
+const cards24 = [
+  {
+    date: "4-6 октября",
+    desc: "Обзорная дискуссия на тему: «Кинофестиваль как инструмент социальной политики»"
+  },
+  {
+    date: "4-6 октября",
+    desc: "Обзорная дискуссия на тему: «Кинофестиваль как инструмент социальной политики»"
+  },
+  {
+    date: "4-6 октября",
+    desc: "Обзорная дискуссия на тему: «Кинофестиваль как инструмент социальной политики»"
+  },
+  {
+    date: "4-6 октября",
+    desc: "Обзорная дискуссия на тему: «Кинофестиваль как инструмент социальной политики»"
+  },
+  {
+    date: "4-6 октября",
     desc: "Обзорная дискуссия на тему: «Кинофестиваль как инструмент социальной политики»"
   },
 ];
 
 function Programms() {
   const cardRefs = useRef([]);
-  const [isInView, setIsInView] = useState(new Array(cards.length).fill(false));
+  const [year, setYear] = useState(2024)
+  const [isInView, setIsInView] = useState(year == 2024 ? new Array(cards24.length).fill(false) : new Array(cards23.length).fill(false));
+
+  const cards = year == 2023 ? cards23 : cards24
 
   useEffect(() => {
     const observers = cardRefs.current.map((cardRef, index) => {
@@ -65,10 +94,10 @@ function Programms() {
   return (
     <div className={scss.programms_wrapper}>
       <div className="container">
-        <p className={scss.title_b}>Программы</p>
+        <p className={scss.title_b}>Программа</p>
         <div className={scss.years_b}>
-          <button>2023</button>
-          <button>2024</button>
+          <button className={year == 2023 && scss.activeBtn} onClick={() => setYear(2023)}>2023</button>
+          <button className={year == 2024 && scss.activeBtn} onClick={() => setYear(2024)}>2024</button>
         </div>
         <div className={scss.programms_card_w}>
           {cards.map((el, index) => {
@@ -88,6 +117,7 @@ function Programms() {
                     </div>
                     <p className={scss.el_date}>{el.date}</p>
                     <p>{el.desc}</p>
+                    <p>{el.desc2}</p>
                     <button>Подробнее</button>
                   </div>
                 </div>

@@ -65,9 +65,8 @@ function Programms() {
   return (
     <div className={scss.programms_wrapper}>
       <div className="container">
-        <p className={scss.title_b}>Программы</p>
+        <p className={scss.title_b}>Программа</p>
         <div className={scss.years_b}>
-          <button>2023</button>
           <button>2024</button>
         </div>
         <div className={scss.programms_card_w}>

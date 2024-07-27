@@ -12,13 +12,16 @@ function MainBlock({formRef}) {
         
         <div className={scss.main_content}>
           <img className="animate__animated animate__backInDown" src="/images/logo-main.svg" alt="" />
-          <p className="animate__animated animate__backInDown">Вклад в возрождение «Кыргызского чуда» 
-            в кинематографе</p>
+          <p className="animate__animated animate__backInDown">Лаборатория кино 4-6 октября 2024</p>
+          <div className={scss.ref_block} onClick={() => formRef.current.scrollIntoView({ behavior: 'smooth' })}>
+            <button>Стать участником</button>
+            <img src="/images/arrrow_bottom.svg" alt="" />
+          </div>
           <div className={scss.slider_block}>
            
             <div className={scss.blockss} style={{cursor: "pointer"}} onClick={() => formRef.current.scrollIntoView({ behavior: 'smooth' })}>
               <div>
-                <img className="animate__animated animate__backInUp" src="/images/main_elips.svg" alt="" />
+                <img src="/images/circle.png" alt="" />
               </div>
             </div>
           </div>
@@ -27,6 +30,7 @@ function MainBlock({formRef}) {
       <div className={scss.mobileHorse}>
             <img src="/images/mobilemain.svg" alt="" />
           </div>
+          <div className={scss.gra}></div>
     </div>
   )
 }

@@ -82,7 +82,6 @@ function MoviesBlock() {
       <div className="container">
         <p className={styles.title_b}>Кинопоказы</p>
         <div className={styles.years_b}>
-          <button>2023</button>
           <button>2024</button>
         </div>
         <div className={styles.programms_card_w}>

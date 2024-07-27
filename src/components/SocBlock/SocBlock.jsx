@@ -1,30 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import scss from "./SocBlock.module.scss";
-import "animate.css/animate.min.css";
+// import "animate.css/animate.min.css";
 
 function SocBlock() {
-  const marqueeRef = useRef(null);
-  const marqueeContentRef = useRef(null);
   const socWrapperRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
 
-  useEffect(() => {
-    const marquee = marqueeRef.current;
-    const marqueeContent = marqueeContentRef.current;
-    let startPos = 0;
-    const speed = 4; // Speed of the scrolling
 
-    const scrollMarquee = () => {
-      startPos -= speed;
-      if (startPos <= -marqueeContent.scrollWidth) {
-        startPos = 0;
-      }
-      marqueeContent.style.transform = `translateX(${startPos}px)`;
-      requestAnimationFrame(scrollMarquee);
-    };
-
-    scrollMarquee();
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -55,33 +37,20 @@ function SocBlock() {
     >
       <div className={scss.soc_top__w}>
         <img src="/images/topis.svg" alt="topis" />
-        <div className={scss.marquee} ref={marqueeRef}>
-          <div className={scss.marqueeContent} ref={marqueeContentRef}>
-            <p className={scss.marqueeText}>
-              Исходя из реалий и требований современной киноиндустрии, где при
-              создании и продвижении кинопроектов
-            </p>
-            <p className={scss.marqueeText}>
-              Исходя из реалий и требований современной киноиндустрии, где при
-              создании и продвижении кинопроектов
-            </p>
+        <div className={scss.marquee + " container"}>
+          <p className={scss.w_thr}>Наша миссия</p>
+
+          <p className={scss.cr}>
+          Внести вклад в возрождение “Кыргызского чуда”  в кинематографе</p>
           </div>
-        </div>
-        <img src="/images/botis.svg" alt="botis" />
       </div>
       <div className={scss.soc_bot__w + " container"}>
         <div className={`${
         isInView ? "animate__animated animate__fadeInLeft" : ""
       }`}>
-          <p>27-30 октября 2024</p>
-          <p className={scss.w_thr}>В фокусе</p>
+          <p className={scss.w_thr}>Задачи</p>
           <p>
-            Исходя из реалий и требований современной киноиндустрии, где при
-            создании и продвижении кинопроектов создатели все чаще сталкиваются
-            с вызовами современного глобального бизнеса, сеть кинотеатров
-            СИНЕМАТИКА создала площадку QARASH LAB, на которой соберутся
-            кинематографисты с Франции, Кореи, России, Казахстана и Кыргызстана
-            для того, чтобы коммуницировать, делиться опытом и созидать.
+          Исходя из реалий и требований современной киноиндустрии, где при создании и продвижении кинопроектов создатели все чаще сталкиваются с вызовами современного глобального бизнеса, сеть кинотеатров СИНЕМАТИКА создала площадку QARASH LAB, на которой соберутся кинематографисты с Франции, Кореи, России, Казахстана и Кыргызстана для того, чтобы коммуницировать, делиться опытом и созидать.
           </p>
           <div className={scss.imgg}>
             <img src="/images/eyes.png" alt="" />

@@ -38,15 +38,16 @@ const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         }
       },
@@ -71,16 +72,10 @@ const settings = {
 
 const cards = [
     {
-        desc: "Условия актерского конкурса",
+        desc: "мы запускаем актерский конкурс",
         background: "#F35503",
         img: "/images/s1.png",
         backgroundImage: "/images/backs1.png"
-    },
-    {
-        desc: "3х-дневный интенсив по актерскому мастерству",
-        background: "#D9D9D9",
-        img: "/images/s2.png",
-        colorT: "#242424"
     },
 ];
 
@@ -116,11 +111,13 @@ function SliderBlock() {
       className={`${scss.s_back} `}
     >
       <div className={scss.slider_ww + " container " + `${isInView ? "animate__animated animate__fadeInLeft" : ""}`}>
-        <Slider {...settings}>
+        {/* <Slider {...settings}>
           {cards.map((el, index) => (
-            <SliderCard key={index} {...el} />
+            <SliderCard key={`${index}_${el.desc}`} {...el} />
           ))}
-        </Slider>
+        </Slider> */}
+        <SliderCard {...cards[0]} />
+
       </div>
       <div className={scss.blocks}>
         <img src="/images/horses.svg" alt="Horses" />

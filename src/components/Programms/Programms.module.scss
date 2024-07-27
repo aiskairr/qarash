@@ -68,6 +68,10 @@
                         color: #FFFFFF;
                         font-weight: 700;
                         font-size: 40px;
+                        @media screen and (max-width: 350px) {
+                        font-size: 30px;
+
+                        }
                     }
                 }
                 .card_back {
@@ -102,10 +106,17 @@
                     }
                     .el_date{
                         font-size: 36px; /* Измените размер шрифта или другие стили для обратной стороны */
-
+                        @media screen and (max-width: 350px) {
+                            font-size: 25px;
+    
+                            }
                     }
                     p {
                         font-size: 20px; /* Измените размер шрифта или другие стили для обратной стороны */
+                        @media screen and (max-width: 350px) {
+                            font-size: 16px;
+    
+                            }
                     }
                 }
             }

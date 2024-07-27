@@ -6,18 +6,21 @@
   .soc_top__w {
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
     overflow: hidden;
-
+    .w_thr {
+      font-weight: 700;
+      font-size: 64px;
+      color: white;
+    }
     img {
       width: 100%;
     }
 
     .marquee {
-      width: 100%;
       overflow: hidden;
       position: relative;
+      text-align: start;
     }
 
     .marqueeContent {
@@ -129,6 +132,8 @@
 }
 .blocks{
     position: relative;
+    height: 100px;
+    background-color: white;
 }
 .clip {
     width: 100%;
@@ -155,5 +160,10 @@
     left: 0;
     z-index: 2;
   }
-
+.cr{
+  color: #13171A;
+  font-size: 35px;
+  font-weight: 700;
+  width: 100%;
+}
  

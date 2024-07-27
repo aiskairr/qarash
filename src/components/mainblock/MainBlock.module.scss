@@ -1,39 +1,44 @@
 .main_w {
   height: 90vh;
   background-color: #313131;
-  background-image: url("../../../public/images/backMain.png");
   background-position: center;
   background-size: cover;
   overflow: hidden;
   position: relative;
+
   .cont {
     height: 100%;
+
     .horseBlock {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: flex-end;
       height: 100%;
       position: relative;
+
       @media (max-width: 700px) {
         display: none;
       }
-      >img {
+
+      > img {
         width: 40%;
+
         &:first-child {
           position: absolute;
           left: 0;
         }
+
         &:nth-child(2) {
           position: absolute;
           right: 0;
         }
+
         @media (max-width: 700px) {
           display: none;
         }
       }
-     
     }
-    
+
     .main_content {
       position: absolute;
       top: 0;
@@ -45,50 +50,62 @@
       align-items: center;
       flex-direction: column;
       padding: 60px 0 0 0;
-  z-index: 2;
+      z-index: 2;
 
       > img {
         @media (max-width: 700px) {
           width: 90%;
         }
       }
+
       p {
         width: 15%;
         text-align: center;
         color: white;
         font-size: 22px;
+
         @media (max-width: 700px) {
           width: 90%;
           font-size: 16px;
           margin-top: 15px;
         }
       }
+
       .slider_block {
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         position: relative;
+
         .blockss {
           display: flex;
           justify-content: center;
           align-items: flex-end;
 
           > div {
-            width: 60%;
+            width: 50%;
             position: absolute;
-            bottom: 0;
-            height: 100%;
-            @media (max-width: 1100px) {
-              bottom: -80px;
-              width: 50%;
+            bottom: -140%;
+            @media screen and (max-width: 600px) {
+              width: 70%;
+              transform: translate(-17%);
+            bottom: -58%;
+            left: 38px;
+
             }
-            @media (max-width: 760px) {
-              width: 100%;
+            @media screen and (max-width: 400px) {
+              width: 70%;
+              transform: translate(-17%);
+            bottom: -58%;
+            left: 30px;
+
             }
             img {
               width: 100%;
               height: 100%;
+              animation: rotate 5s linear infinite;
+
               @media screen and (max-width: 600px) {
                 width: 154%;
                 transform: translate(-17%);
@@ -100,19 +117,55 @@
     }
   }
 }
+
 .mobileHorse {
   display: none;
   position: absolute;
   height: 100vh;
   top: 0;
   z-index: 1;
+
   @media (max-width: 700px) {
     display: block;
     width: 100%;
-    img{
+
+    img {
       width: 100%;
       position: absolute;
       bottom: -7%;
     }
   }
+}
+
+.ref_block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+  >button{
+    border-radius: 200px;
+    background-color: #F35503;
+    border: 1px solid #F35503;
+    color: white;
+    padding: 10px 25px;
+  }
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.gra{
+  background: linear-gradient(0deg, #13171A -11.03%, rgba(74, 74, 74, 0) 100%);
+  height: 20%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 10 ;
 }

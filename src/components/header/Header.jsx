@@ -20,7 +20,7 @@ function Header({ socBlockRef, programmsRef, footerRef }) {
     <div className={scss.header_w}>
       <div className={scss.header_grid_w + " container"}>
         <div className={scss.header_left_w}>
-          <img src="/images/logo.svg" alt="" />
+          <img src="/images/logo.png" alt="" />
         </div>
         <div className={scss.header_right_w}>
           <a onClick={() => socBlockRef.current.scrollIntoView({ behavior: 'smooth' })}>

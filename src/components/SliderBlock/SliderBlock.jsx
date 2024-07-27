@@ -72,7 +72,7 @@ const settings = {
 
 const cards = [
     {
-        desc: "мы запускаем актерский конкурс",
+        desc: "Мы запускаем актерский конкурс",
         background: "#F35503",
         img: "/images/s1.png",
         backgroundImage: "/images/backs1.png"

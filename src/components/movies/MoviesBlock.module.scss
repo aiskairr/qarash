@@ -7,7 +7,11 @@
     z-index: 1;
     width: 100%;
     overflow: hidden;
-    padding-bottom: 150px;
+    padding-bottom: 250px;
+
+    @media (max-width: 768px) {
+        padding-bottom: 50px;
+    }
 
     >div {
         position: relative;
@@ -35,25 +39,24 @@
                 border-radius: 25px;
                 font-size: 16px;
                 font-weight: 500;
+            }
 
-                &:last-child {
-                    background-color: #13171A;
-                    border: 1px solid #13171A;
-                }
-              
+            .activeBtn {
+                background-color: #13171A;
+                border: 1px solid #13171A;
             }
         }
 
         .programms_card_w {
             margin-top: 50px;
             width: 100%;
-
+            z-index: 100000000000;
 
             .ppd {
                 width: 100%;
 
-                .logos_w{
-                    img{
+                .logos_w {
+                    img {
                         width: 95%;
                     }
                 }
@@ -73,11 +76,12 @@
             right: 0;
             width: 70%;
             opacity: 0.2;
-            @media (max-width: 600px) {
-            top: 30px;
 
-            width: 100%;
-                
+            @media (max-width: 600px) {
+                top: 30px;
+
+                width: 100%;
+
             }
         }
     }
@@ -86,7 +90,7 @@
 .people {
     position: absolute;
     width: 100% !important;
-    bottom: 0;
+    bottom: -50px;
     z-index: 15;
 }
 
@@ -99,12 +103,13 @@
     height: 100%;
     width: 30%;
     z-index: -1;
+
     @media (max-width: 600px) {
         display: none;
     }
 }
 
-.ticket{
+.ticket {
     margin-top: 35px;
     margin-left: 100px;
     margin-bottom: 80px;
@@ -116,14 +121,51 @@
     justify-content: center;
     align-items: center;
     border-radius: 30px;
+
     @media (max-width: 600px) {
         width: 100%;
-    margin-left: 0px;
-    margin-bottom: 0px;
-            
-        }
+        margin-left: 0px;
+        margin-bottom: 0px;
+
+    }
 }
 
 .slider_w {
     overflow: hidden;
+}
+
+.text__block {
+    display: flex;
+    margin-top: 21px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    z-index: 112000;
+
+    p {
+        color: rgba(19, 23, 26, 1);
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    button {
+        cursor: pointer;
+        width: 154px;
+        height: 42px;
+        padding: 10px;
+        border-radius: 30px;
+        color: white;
+        background-color: rgba(19, 23, 26, 1);
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+
+        button {
+            width: 50%;
+            margin-top: 20px;
+        }
+    }
 }

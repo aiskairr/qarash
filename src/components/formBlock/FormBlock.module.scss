@@ -91,10 +91,24 @@
   }
 
   .logos_slider__wrap {
-    background-color: black;
+    background-color: #313131;
   }
 }
-
+:global{
+  .slick-slide {
+    > div{
+      width: 100%;
+      >div{
+        >div{
+          width: 100%;
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
 .nonImg_w {
   overflow: hidden;
   height: 550px;

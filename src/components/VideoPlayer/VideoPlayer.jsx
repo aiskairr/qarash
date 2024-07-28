@@ -88,10 +88,10 @@ const VideoPlayer = () => {
             ref={videoPlayerRef}
             className={`${styles.wrapper}`}
         >
-            <div className={styles.textOverlayTop}>
-                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
-                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
-                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
+            <div className={styles.textOverlayTop }>
+                <div><img src='/images/qa.svg' alt='QARASH LAB Bottom' /></div>
+                <div><img src='/images/qa.svg' alt='QARASH LAB Bottom' /></div>
+                <div><img src='/images/qa.svg' alt='QARASH LAB Bottom' /></div>
             </div>
             <div className={styles.container + `  ${isInView ? "animate__animated animate__fadeInUp" : ""}`}>
                 <img className={styles.sideTextRight} src='/images/qarashText.svg' alt='QARASH LAB Right' />
@@ -105,15 +105,22 @@ const VideoPlayer = () => {
                         playing={isPlaying}
                     />
                     <div className={styles.playerButton} onClick={handlePlayButtonClick}>
+                        <div>
                         <img src='/images/playIcon.svg' alt='play' />
+
+                        </div>
+                    </div>
+                    <div className={styles.c_w}>
+                    <div className={styles.circle_b}></div>
+
                     </div>
                 </div>
                 <img className={styles.sideText} src='/images/qarashText.svg' alt='QARASH LAB Left' />
             </div>
-            <div className={styles.textOverlay}>
-                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
-                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
-                <img src='/images/qarashText.svg' alt='QARASH LAB Bottom' />
+            <div className={styles.textOverlay }>
+                <div><img src='/images/qa.svg' alt='QARASH LAB Bottom' /></div>
+                <div><img src='/images/qa.svg' alt='QARASH LAB Bottom' /></div>
+                <div><img src='/images/qa.svg' alt='QARASH LAB Bottom' /></div>
             </div>
             <div style={{ width: '100%' }}>
                 <div className={styles.logos_slider__wrap}>

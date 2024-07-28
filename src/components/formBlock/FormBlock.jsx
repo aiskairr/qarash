@@ -196,7 +196,8 @@ function FormBlock() {
         <img className={` ${isVisible ? 'animate__animated animate__fadeInLeft' : ''}`} src="/images/form_img.svg" alt="" />
         <div>
           <div className={scss.form}>
-            <p className={scss.title}>Регистрация участника</p>
+            <p className={scss.title}>Регистрация участника 
+            на актерский конкурс</p>
             <input
               type="text"
               placeholder="Введите свое имя"

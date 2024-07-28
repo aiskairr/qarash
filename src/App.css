@@ -21,6 +21,7 @@ button{
   cursor: pointer;
   display: flex;
   margin: auto;
+  border-radius: 20px;
 }
 @media screen and (max-width: 600px) {
   .uploader {
@@ -42,6 +43,7 @@ button{
   display: flex;
   align-items: center;
   background-color: #333333;
+  border-radius: 16px;
 }
 
 .uploaded-img {

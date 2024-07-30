@@ -19,7 +19,9 @@ const ModalProgramms = ({ creditsData }) => {
                 </div>
             </div>
             <div className={styles.info}>
-                <button>Купить билет</button>
+                {creditsData?.link && (
+                    <a href={creditsData?.link} target="_blank">Купить билет</a>
+                )}
                 <div className={styles.info__text}>Продолжительность: {creditsData.duration}<br />
                     Стоимость: {creditsData.price} сом <br />
                     Место проведения: {creditsData.place}<br />

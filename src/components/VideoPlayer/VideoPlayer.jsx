@@ -97,7 +97,7 @@ const VideoPlayer = () => {
                 <img className={styles.sideTextRight} src='/images/qarashText.svg' alt='QARASH LAB Right' />
                 <div className={styles.videoFrame}>
                     <ReactPlayer
-                        url='https://www.youtube.com/watch?v=BxAkq9d6M-M'
+                        url='https://firebasestorage.googleapis.com/v0/b/qarash-e4207.appspot.com/o/videos%2Fvideo_2024-07-30_14-16-11.mp4?alt=media&token=fd888b99-e58d-49fd-8788-f8f53e10f3b2'
                         className={styles.reactPlayer}
                         width='100%'
                         height='100%'

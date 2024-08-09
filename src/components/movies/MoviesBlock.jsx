@@ -9,6 +9,7 @@ import ModalMovies from '../ModalMovies/ModalMovies';
 
 const cards23 = [
   {
+    link: "https://cinematica.kg/movies/2023/2/20000001/20001315/20109810/",
     scenario: 'Юрий Клепиков',
     operator: 'Юрий Абрамович Векслер',
     designer: 'Наталья Васильева',
@@ -44,6 +45,7 @@ const cards23 = [
     date: "5 октября, Чт"
   },
   {
+    link: "https://cinematica.kg/movies/2024/2/20000001/20001317/20109812/",
     scenario: 'Аблай Нурманбетов',
     operator: 'Азамат Дулатов',
     designer: 'Назира Байбекова',
@@ -72,6 +74,7 @@ const cards23 = [
     date: "28 окт, сб 19:00"
   },
   {
+    link: "https://cinematica.kg/movies/2024/2/20000001/20001317/20109812/",
     scenario: 'Дальмира Тилепберген',
     operator: 'Акжол Бекболотов',
     designer: 'Урмат Осмоев',

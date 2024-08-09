@@ -1,6 +1,6 @@
 import styles from "./ModalMovies.module.scss"
 
-const ModalMovies = ({creditsData}) => {
+const ModalMovies = ({ creditsData }) => {
     return (
         <div className={styles.wrapper}>
             <img className={styles.backImg} src="images/modalImage.png" />
@@ -17,7 +17,9 @@ const ModalMovies = ({creditsData}) => {
                 <img src={creditsData.img} />
             </div>
             <div className={styles.info}>
-                <button>Купить билет</button>
+                {creditsData?.link && (
+                    <a href={creditsData?.link} target="_blank">Купить билет</a>
+                )}
                 <div className={styles.info__text}>Продолжительность: {creditsData.duration}<br />
                     Стоимость: {creditsData.price} сом <br />
                     Место проведения: {creditsData.place}<br />

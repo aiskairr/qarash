@@ -6,6 +6,7 @@ import ModalProgramms from '../ModalProgramms/ModalProgramms';
 
 const cards23 = [
   {
+    link: "https://ticket.kg/event/kinofestival-i-obshhestvo-rol-i-vliyanie",
     date: "5 октября, Чт",
     desc: "Обзорная дискуссия на тему: «Кинофестиваль как инструмент социальной политики»",
     title: "Сеть кинотеатров «Синематика»/QARASH LAB лаборатория кино представляет»",
@@ -21,6 +22,7 @@ const cards23 = [
     place: "Отель Хаят",
   },
   {
+    link: "https://cinematica.kg/movies/2023/2/20000001/20001315/20109810/",
     date: "27 октября, Пт",
     desc: "Торжественная церемония открытия киномероприятия QARASH LAB Лаборатория Кино",
     desc2: "Показ фильма Динары Асановой «Пацаны»",
@@ -38,6 +40,7 @@ const cards23 = [
     dress: "Платья/костюмы"
   },
   {
+    link: "https://ticket.kg/event/dva-dnya-laboratorii-kino",
     date: "28 октября, Сб",
     desc: "Образовательный блок в АУЦА",
     desc2: "Показ фильма Айсултана Сейитова «Каш»",

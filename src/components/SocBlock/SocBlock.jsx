@@ -46,7 +46,7 @@ function SocBlock() {
       </div>
       <div className={scss.soc_bot__w + " container"}>
         <div className={`${
-        isInView ? "animate__animated animate__fadeInLeft" : ""
+        isInView ? "animate__animated animate__fadeInUp" : ""
       }`}>
           <p className={scss.w_thr}>Задачи</p>
           <p>
@@ -57,7 +57,7 @@ function SocBlock() {
           </div>
         </div>
         <div className={scss.r_block + ` ${
-        isInView ? "animate__animated animate__fadeInRight" : ""
+        isInView ? "animate__animated animate__fadeInUp" : ""
       }`}>
           <div>
             <p>

@@ -193,7 +193,7 @@ function FormBlock() {
     >
       <form className="container" onSubmit={handleSubmit} ref={formRef}>
         {showLoader && <Loader />}
-        <img className={` ${isVisible ? 'animate__animated animate__fadeInLeft' : ''}`} src="/images/form_img.svg" alt="" />
+        <img className={` ${isVisible ? 'animate__animated animate__fadeInUp' : ''}`} src="/images/form_img.svg" alt="" />
         <div>
           <div className={scss.form}>
             <p className={scss.title}>Регистрация участника 
@@ -225,7 +225,7 @@ function FormBlock() {
             <input type="submit" value="Зарегистрироваться" disabled={uploading} className={scss.reg__pc} />
           </div>
         </div>
-        <div className={scss.img_upload + ` ${isVisible ? 'animate__animated animate__fadeInRight' : ''}`}>
+        <div className={scss.img_upload + ` ${isVisible ? 'animate__animated animate__fadeInUp' : ''}`}>
           <div>
             <input
               type="file"

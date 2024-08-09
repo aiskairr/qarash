@@ -220,6 +220,8 @@ function Programms() {
 
   return (
     <div className={scss.programms_wrapper}>
+      <img src="/images/backm.png" alt="" />
+
       <div className="container">
         <p className={scss.title_b}>Программа</p>
         <div className={scss.years_b}>
@@ -243,8 +245,8 @@ function Programms() {
                       <img src="/images/clapperboardtop.svg" alt="" />
                     </div>
                     <p className={scss.el_date}>{el.date}</p>
-                    <p>{el.desc}</p>
-                    <p>{el.desc2}</p>
+                    <p className={scss.desc2}>{el.desc}</p>
+                    <p className={scss.desc2}>{el.desc2}</p>
                     <button onClick={() => openModal(el)}>Подробнее</button>
                   </div>
                   <Modal isOpen={isModalOpen} onClose={closeModal}>

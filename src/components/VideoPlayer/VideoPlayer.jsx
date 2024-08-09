@@ -93,7 +93,7 @@ const VideoPlayer = () => {
                 <div><img src='/images/qa.svg' alt='QARASH LAB Bottom' /></div>
                 <div><img src='/images/qa.svg' alt='QARASH LAB Bottom' /></div>
             </div>
-            <div className={styles.container + `  ${isInView ? "animate__animated animate__fadeInUp" : ""}`}>
+            <div className={styles.container + `  ${isInView ? "animate__animated" : ""}`}>
                 <img className={styles.sideTextRight} src='/images/qarashText.svg' alt='QARASH LAB Right' />
                 <div className={styles.videoFrame}>
                     <ReactPlayer

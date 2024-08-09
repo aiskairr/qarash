@@ -40,7 +40,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 100px;
-    margin-top: 40px;
     grid-template-rows: 1fr;
     padding: 100px 0;
     @media screen and (max-width: 880px) {
@@ -91,7 +90,7 @@
               background-color: white;
               left: -21px;
               top: 30px;
-              width: 1px;
+              width: 2px;
               height: calc(
                 100% + 10px
               ); // Уменьшите на высоту блока (в этом примере 30px сверху и снизу)
@@ -147,7 +146,9 @@
     display: flex;
     justify-content: center;
     img{
-        width: 200px;
+      position: relative;
+        width: 300px;
+        bottom: 18px;
     }
   }
   .clip2 {

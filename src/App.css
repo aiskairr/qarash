@@ -11,6 +11,7 @@ button{
   border: 0;
   outline: 0;
   cursor: pointer;
+  transition: ease-in-out .3s;
 }
 
 .uploader {
@@ -74,4 +75,12 @@ button{
   .slick-dots {
       display: none !important;
   }
+}
+button:hover{
+  cursor: pointer !important;
+  background-color: #F35503 !important;
+  
+  -webkit-box-shadow: 0px 0px 15px 4px rgba(255,161,54,0.5);
+-moz-box-shadow: 0px 0px 15px 4px rgba(255,161,54,0.5);
+box-shadow: 0px 0px 15px 4px rgba(255,161,54,0.5);
 }

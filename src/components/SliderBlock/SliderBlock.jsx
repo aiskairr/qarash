@@ -110,7 +110,7 @@ function SliderBlock() {
       ref={sliderBlockRef}
       className={`${scss.s_back} `}
     >
-      <div className={scss.slider_ww + " container " + `${isInView ? "animate__animated animate__fadeInLeft" : ""}`}>
+      <div className={scss.slider_ww + " container " + `${isInView ? "animate__animated animate__fadeInUp" : ""}`}>
         {/* <Slider {...settings}>
           {cards.map((el, index) => (
             <SliderCard key={`${index}_${el.desc}`} {...el} />

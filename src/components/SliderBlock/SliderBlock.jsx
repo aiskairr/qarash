@@ -2,9 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import SliderCard from './SliderCard/SliderCard';
 import scss from "./SliderBlock.module.scss";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "animate.css/animate.min.css";
+import Modal from '../Modal/Modal';
+import SliderModal from '../SliderModal/SliderModal';
 
 // Custom Next Arrow
 const NextArrow = (props) => {
@@ -35,53 +37,60 @@ const PrevArrow = (props) => {
 }
 
 const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
       }
-    ]
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    }
+  ]
 };
 
 const cards = [
-    {
-        desc: "Мы запускаем актерский конкурс",
-        background: "#F35503",
-        img: "/images/s1.png",
-        backgroundImage: "/images/backs1.png"
-    },
+  {
+    desc: "Мы запускаем актерский конкурс",
+    background: "#F35503",
+    img: "/images/s1.png",
+    backgroundImage: "/images/backs1.png"
+  },
 ];
 
 function SliderBlock() {
   const sliderBlockRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = (card) => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => setModalOpen(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -116,8 +125,10 @@ function SliderBlock() {
             <SliderCard key={`${index}_${el.desc}`} {...el} />
           ))}
         </Slider> */}
-        <SliderCard {...cards[0]} />
-
+        <SliderCard {...cards[0]} openModal={openModal} />
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          <SliderModal />
+        </Modal>
       </div>
       <div className={scss.blocks}>
         <img src="/images/horses.svg" alt="Horses" />

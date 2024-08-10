@@ -1,12 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import scss from "./SocBlock.module.scss";
-// import "animate.css/animate.min.css";
 
 function SocBlock() {
   const socWrapperRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
-
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,24 +38,22 @@ function SocBlock() {
           <p className={scss.w_thr}>Наша миссия</p>
 
           <p className={scss.cr}>
-          Внести вклад в возрождение “Кыргызского чуда”  в кинематографе</p>
-          </div>
+            Внести вклад в возрождение “Кыргызского чуда”  в кинематографе</p>
+        </div>
       </div>
       <div className={scss.soc_bot__w + " container"}>
-        <div className={`${
-        isInView ? "animate__animated animate__fadeInUp" : ""
-      }`}>
+        <div className={`${isInView ? "animate__animated animate__fadeInUp" : ""
+          }`}>
           <p className={scss.w_thr}>Задачи</p>
           <p>
-          Исходя из реалий и требований современной киноиндустрии, где при создании и продвижении кинопроектов создатели все чаще сталкиваются с вызовами современного глобального бизнеса, сеть кинотеатров СИНЕМАТИКА создала площадку QARASH LAB, на которой соберутся кинематографисты с Франции, Кореи, России, Казахстана и Кыргызстана для того, чтобы коммуницировать, делиться опытом и созидать.
+            Исходя из реалий и требований современной киноиндустрии, где при создании и продвижении кинопроектов создатели все чаще сталкиваются с вызовами современного глобального бизнеса, сеть кинотеатров СИНЕМАТИКА создала площадку QARASH LAB, на которой соберутся кинематографисты с Франции, Кореи, России, Казахстана и Кыргызстана для того, чтобы коммуницировать, делиться опытом и созидать.
           </p>
           <div className={scss.imgg}>
             <img src="/images/eyes.png" alt="" />
           </div>
         </div>
-        <div className={scss.r_block + ` ${
-        isInView ? "animate__animated animate__fadeInUp" : ""
-      }`}>
+        <div className={scss.r_block + ` ${isInView ? "animate__animated animate__fadeInUp" : ""
+          }`}>
           <div>
             <p>
               Объединить в единое целое целое КИНО И БИЗНЕС: повысить знания в
